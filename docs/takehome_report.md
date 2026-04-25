@@ -36,25 +36,25 @@ def learn(self, old_state, reward, new_state, action):
     self.q_table[old_state][action] = (1 - self.alpha) * current_q_value + self.alpha * (reward + self.gamma * max_q_value_in_new_state)
 ```
 
-令舊狀態為 \(s_t\)，動作為 \(a_t\)，執行後得到 reward \(r_{t+1}\) 與新狀態 \(s_{t+1}\)。更新式為：
+令舊狀態為 $s_t$，動作為 $a_t$，執行後得到 reward $r_{t+1}$ 與新狀態 $s_{t+1}$。更新式為：
 
-\[
+$$
 Q_{new}(s_t,a_t)=(1-\alpha)Q(s_t,a_t)+\alpha\left[r_{t+1}+\gamma\max_{a'}Q(s_{t+1},a')\right]
-\]
+$$
 
 等價寫法：
 
-\[
+$$
 Q_{new}(s_t,a_t)=Q(s_t,a_t)+\alpha\left(r_{t+1}+\gamma\max_{a'}Q(s_{t+1},a')-Q(s_t,a_t)\right)
-\]
+$$
 
 其中：
 
-- \(Q(s,a)\)：在狀態 \(s\) 採取動作 \(a\) 後，預期可得到的累積回報。
-- \(\alpha\)：learning rate。越大代表越快相信新樣本，但也更容易震盪。
-- \(\gamma\)：discount factor。越接近 1，越重視長期 reward。
-- \(\max_{a'}Q(s_{t+1},a')\)：假設下一狀態之後採取目前估計的最佳動作，這也是 Q-learning 的 off-policy 特性。
-- 括號中的 \(r_{t+1}+\gamma\max Q\) 是 TD target；target 與目前估計的差距是 TD error。
+- $Q(s,a)$：在狀態 $s$ 採取動作 $a$ 後，預期可得到的累積回報。
+- $\alpha$：learning rate。越大代表越快相信新樣本，但也更容易震盪。
+- $\gamma$：discount factor。越接近 1，越重視長期 reward。
+- $\max_{a'}Q(s_{t+1},a')$：假設下一狀態之後採取目前估計的最佳動作，這也是 Q-learning 的 off-policy 特性。
+- 括號中的 $r_{t+1}+\gamma\max Q$ 是 TD target；target 與目前估計的差距是 TD error。
 
 ### 1.2 三種以上初始設定的 Q-table 結果與討論
 
@@ -83,17 +83,17 @@ Q-Agent 會透過 TD target 更新 `Q(state, action)`，把「走向 gold 的路
 
 ### 2.1 程式目的
 
-Keras 範例的目的是在 `BreakoutNoFrameskip-v4` 上訓練 Deep Q-Network。它把 Atari 畫面前處理成 84x84 灰階 frame，堆疊 4 張 frame 當作 state，使用 CNN 近似 \(Q(s,a)\)，再用 epsilon-greedy、experience replay、target network 與 Huber loss 訓練 agent 控制板子接球、打磚塊並最大化遊戲分數。
+Keras 範例的目的是在 `BreakoutNoFrameskip-v4` 上訓練 Deep Q-Network。它把 Atari 畫面前處理成 84x84 灰階 frame，堆疊 4 張 frame 當作 state，使用 CNN 近似 $Q(s,a)$，再用 epsilon-greedy、experience replay、target network 與 Huber loss 訓練 agent 控制板子接球、打磚塊並最大化遊戲分數。
 
 ### 2.2 為何 Q-learning 能達成任務目標
 
 Breakout 的每個 action 會影響球、板子與磚塊後續狀態；短期得分與長期能否維持球不掉落都會反映在累積 reward。Q-learning 學的是：
 
-\[
+$$
 Q^*(s,a)=\mathbb{E}\left[r_{t+1}+\gamma\max_{a'}Q^*(s_{t+1},a')\right]
-\]
+$$
 
-只要 CNN 能從影像中抽出球的位置、板子位置、速度方向與磚塊分布，輸出層就能估計每個 action 的長期價值。agent 選 \(\arg\max_a Q(s,a)\) 時，會偏向「讓球回彈、打掉更多磚塊、避免失誤」的動作。experience replay 降低連續影像樣本的相關性，target network 則降低 bootstrap target 持續變動造成的不穩定。
+只要 CNN 能從影像中抽出球的位置、板子位置、速度方向與磚塊分布，輸出層就能估計每個 action 的長期價值。agent 選 $\arg\max_a Q(s,a)$ 時，會偏向「讓球回彈、打掉更多磚塊、避免失誤」的動作。experience replay 降低連續影像樣本的相關性，target network 則降低 bootstrap target 持續變動造成的不穩定。
 
 ### 2.3 程式結構與流程圖
 
@@ -134,11 +134,11 @@ flowchart TD
 
 我提供的變體在 `scripts/dqn_dueling_variant.py`。它保留原始 DQN 的 convolutional feature extractor，但把 fully connected head 改成兩條支路：
 
-\[
+$$
 Q(s,a)=V(s)+A(s,a)-\frac{1}{|\mathcal{A}|}\sum_{a'}A(s,a')
-\]
+$$
 
-其中 \(V(s)\) 估計狀態本身價值，\(A(s,a)\) 估計各 action 相對優勢。減去 advantage 平均值是為了避免 \(V\) 和 \(A\) 任意平移導致不可識別。
+其中 $V(s)$ 估計狀態本身價值，$A(s,a)$ 估計各 action 相對優勢。減去 advantage 平均值是為了避免 $V$ 和 $A$ 任意平移導致不可識別。
 
 變更重點：
 
@@ -163,35 +163,35 @@ Q(s,a)=V(s)+A(s,a)-\frac{1}{|\mathcal{A}|}\sum_{a'}A(s,a')
 
 Decision Transformer 把 reinforcement learning 改寫成 sequence modeling。它不直接估計 value function，也不透過 policy gradient 最大化期望回報，而是把 trajectory 表示成序列：
 
-\[
+$$
 (\hat{R}_1, s_1, a_1, \hat{R}_2, s_2, a_2, \ldots)
-\]
+$$
 
-其中 \(\hat{R}_t\) 是 return-to-go。模型使用 causal Transformer，根據「目標 return、過去 states、過去 actions」預測下一個 action。
+其中 $\hat{R}_t$ 是 return-to-go。模型使用 causal Transformer，根據「目標 return、過去 states、過去 actions」預測下一個 action。
 
 與 Q-learning 的差異：
 
 | 面向 | Q-learning / DQN | Decision Transformer |
 |---|---|---|
-| 學習目標 | 學 \(Q(s,a)\)，用 Bellman target bootstrap | 學條件式 action prediction |
+| 學習目標 | 學 $Q(s,a)$，用 Bellman target bootstrap | 學條件式 action prediction |
 | 資料形式 | 可 online 與環境互動，也可 off-policy | 主要是 offline trajectory dataset |
-| 決策方式 | 選 \(\arg\max_a Q(s,a)\) | 給定 desired return，autoregressive 產生 action |
+| 決策方式 | 選 $\arg\max_a Q(s,a)$ | 給定 desired return，autoregressive 產生 action |
 | 核心模型 | table / CNN / MLP 估計 value | Transformer 建模序列依賴 |
 | 是否需要 Bellman backup | 需要 | 不需要 |
 
 ### 3.2 Return-to-go 定義
 
-Return-to-go 是從時間 \(t\) 開始到 episode 結束的未來 reward 總和：
+Return-to-go 是從時間 $t$ 開始到 episode 結束的未來 reward 總和：
 
-\[
+$$
 \hat{R}_t=\sum_{t'=t}^{T} r_{t'}
-\]
+$$
 
 若使用 discount，也可寫成：
 
-\[
+$$
 \hat{R}_t=\sum_{k=0}^{T-t}\gamma^k r_{t+k}
-\]
+$$
 
 在 DT 中，return-to-go 是條件輸入。推論時可以指定一個較高的 target return，模型便嘗試產生過去資料中與高回報 trajectory 類似的 action 序列。每執行一步後，目標 return 通常會扣掉實際得到的 reward，形成下一步的條件。
 
@@ -201,8 +201,8 @@ DT 的訓練本質是 supervised learning：給定過去 token 與 target return
 
 因此它不需要：
 
-- value function：不估 \(V(s)\) 或 \(Q(s,a)\)，也不用 Bellman equation 建 target。
-- policy gradient：不需要估計 \(\nabla_\theta \mathbb{E}[R]\)，也不用 advantage estimator。
+- value function：不估 $V(s)$ 或 $Q(s,a)$，也不用 Bellman equation 建 target。
+- policy gradient：不需要估計 $\nabla_\theta \mathbb{E}[R]$，也不用 advantage estimator。
 - online exploration：訓練可完全從 offline trajectories 完成。
 
 它能做決策，是因為 return-to-go conditioning 把「想要多高回報」變成模型輸入，Transformer 再從資料中學到能達到該回報的行為模式。
@@ -227,8 +227,8 @@ DT 有時能超越傳統 RL 的原因：
 
 一個可行改進：加入 trajectory quality-aware sampling。訓練時不要平均抽樣所有 trajectories，而是提高高回報、多樣化且接近目標任務分布的片段比例，同時保留部分中低回報樣本避免過度模仿單一路徑。具體做法可以是：
 
-\[
+$$
 p(\tau_i) \propto \exp(\beta \cdot normalized\_return(\tau_i)) + \lambda \cdot diversity(\tau_i)
-\]
+$$
 
 這樣能讓模型更常看到成功策略，同時避免只記住少數 high-return trajectory。若搭配 conservative data augmentation，例如 state noise、random crop 或 action dropout，也能提升泛化能力。
