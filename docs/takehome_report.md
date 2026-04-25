@@ -144,30 +144,142 @@ flowchart TD
     X -->|yes| Y[Stop]
 ```
 
-### 2.4 CNN 變體：Dueling DQN
+### 2.4 CNN 變體：Dueling DQN head
 
-我提供的變體在 `scripts/dqn_dueling_variant.py`。它保留原始 DQN 的 convolutional feature extractor，但把 fully connected head 改成兩條支路：
+本作業的修改版本採用 Dueling DQN head。前面的 CNN backbone 幾乎保留 Keras 官方 Breakout DQN 的設計，後面的輸出層從「直接輸出每個 action 的 Q-value」改成兩條分支：
+
+- State Value stream：估計 $V(s)$，也就是「目前這個狀態本身好不好」。
+- Action Advantage stream：估計 $A(s,a)$，也就是「某個 action 相對其他 action 好多少」。
+
+最後再組合成：
 
 $$
-Q(s,a)=V(s)+A(s,a)-\frac{1}{|\mathcal{A}|}\sum_{a'}A(s,a')
+Q(s,a)=V(s)+\left(A(s,a)-\frac{1}{|\mathcal A|}\sum_{a'}A(s,a')\right)
 $$
 
-其中 $V(s)$ 估計狀態本身價值，$A(s,a)$ 估計各 action 相對優勢。減去 advantage 平均值是為了避免 $V$ 和 $A$ 任意平移導致不可識別。
+減去 advantage 的平均值，是為了讓 $V(s)$ 和 $A(s,a)$ 的分解更穩定，避免兩者任意平移後仍得到同一組 Q-value。Dueling Network 的核心想法就是把「狀態本身的價值」和「各動作的相對優勢」分開估計。這符合 Wang et al. 在 dueling network 論文中提出的基本設計。
 
-變更重點：
+![Dueling DQN head architecture](images/dqn_dueling_head.svg)
 
-- 原始 CNN head：`Flatten -> Dense(512) -> Dense(num_actions)`。
-- Dueling head：`Flatten -> value stream + advantage stream -> combine Q-values`。
-- 訓練 loop 不必改；仍可用同一套 replay buffer、target network、epsilon-greedy 與 TD target。
+原始 Keras Q-network 可簡化表示為：
 
-結果與說明：
+```text
+Input: 4 stacked frames, shape = (4, 84, 84)
+Conv2D(32, 8x8, stride 4)
+Conv2D(64, 4x4, stride 2)
+Conv2D(64, 3x3, stride 1)
+Flatten
+Dense(512)
+Dense(num_actions)
+```
 
-| 模型 | 本作業狀態 | 預期/文獻依據 |
-|---|---|---|
-| 原始 Keras DQN | Keras 文件說明約 10M frames 可得到好結果，完整 Atari 訓練通常需長時間 GPU | baseline CNN 直接估計每個 action 的 Q-value |
-| Dueling DQN 變體 | 已提供可替換模型 factory；本機未執行 10M frames 完整訓練 | Wang et al. 提出 dueling architecture 可分離 state value 與 action advantage，在許多 action 價值接近的 Atari 狀態中改善 policy evaluation |
+修改後的 Dueling DQN head 為：
 
-嚴格來說，要宣稱「本機實驗已超越原版」需要用相同 seed、frame budget、evaluation episodes 比較平均分數。這份學習紀錄已提供合法可重現的變體程式，但未偽造長時間 Atari 分數。若要補完整實驗，建議至少用 3 個 seeds、固定 1M/5M/10M frames checkpoint，報告 mean episode return 與標準差。
+```text
+Input: 4 stacked frames, shape = (4, 84, 84)
+Conv2D(32, 8x8, stride 4)
+Conv2D(64, 4x4, stride 2)
+Conv2D(64, 3x3, stride 1)
+Flatten
+Dense(512)
+Value stream: Dense(256) -> Dense(1)
+Advantage stream: Dense(256) -> Dense(num_actions)
+Q-values = V(s) + (A(s,a) - mean(A(s,a)))
+```
+
+實作檔案在 `scripts/dqn_dueling_variant.py`。核心程式如下：
+
+```python
+import keras
+from keras import layers, ops
+
+num_actions = 4
+
+def create_dueling_q_model():
+    inputs = layers.Input(shape=(4, 84, 84))
+
+    x = layers.Lambda(
+        lambda tensor: ops.transpose(tensor, (0, 2, 3, 1)),
+        output_shape=(84, 84, 4),
+    )(inputs)
+
+    # CNN backbone: same spirit as original DQN.
+    x = layers.Conv2D(32, 8, strides=4, activation="relu")(x)
+    x = layers.Conv2D(64, 4, strides=2, activation="relu")(x)
+    x = layers.Conv2D(64, 3, strides=1, activation="relu")(x)
+    x = layers.Flatten()(x)
+    x = layers.Dense(512, activation="relu")(x)
+
+    # Value stream: V(s)
+    value = layers.Dense(256, activation="relu")(x)
+    value = layers.Dense(1, activation="linear")(value)
+
+    # Advantage stream: A(s,a)
+    advantage = layers.Dense(256, activation="relu")(x)
+    advantage = layers.Dense(num_actions, activation="linear")(advantage)
+
+    # Q(s,a) = V(s) + (A(s,a) - mean(A))
+    advantage_mean = layers.Lambda(
+        lambda a: ops.mean(a, axis=1, keepdims=True)
+    )(advantage)
+
+    q_values = layers.Add()([
+        value,
+        layers.Subtract()([advantage, advantage_mean]),
+    ])
+
+    return keras.Model(inputs=inputs, outputs=q_values)
+```
+
+替換方式很小，只需要把原本的：
+
+```python
+model = create_q_model()
+model_target = create_q_model()
+```
+
+改成：
+
+```python
+model = create_dueling_q_model()
+model_target = create_dueling_q_model()
+```
+
+選擇這個版本的原因有三點：
+
+- 比原始 Keras 範例容易改：只動最後的 network head，不需要重寫 replay buffer、target network、epsilon schedule 或 training loop。
+- 很好解釋：原始 DQN 直接估 $Q(s,a)$；Dueling DQN 拆成 $V(s)$ 和 $A(s,a)$。在很多 Breakout 狀態中，先知道「這個狀態本身是否有利」比精準區分每個 action 更重要。
+- 比單純增加 Dense layer 更有理論支撐：dueling architecture 是已發表的 DQN 改進方法，常用於 action value 很接近、但 state value 仍很重要的 Atari 類任務。
+
+公平比較時，除了 network architecture 之外，其他條件應固定：
+
+| 比較項目 | 固定設定 |
+|---|---|
+| environment | `BreakoutNoFrameskip-v4` |
+| preprocessing | same Atari preprocessing and 4-frame stack |
+| random seed | same seed for baseline and variant |
+| training budget | same episodes or same frame count |
+| optimizer | same optimizer and learning rate |
+| replay buffer | same capacity, warm-up, and sampling rule |
+| target network | same target update interval |
+| exploration | same epsilon schedule |
+
+這樣才能把表現差異主要歸因於模型架構，而不是其他超參數。
+
+建議呈現的實驗結果包括三項：
+
+1. Reward curve：畫兩條線，`Original DQN` 與 `Dueling DQN`；x 軸用 training episodes 或 frames，y 軸用 episode reward 或 running reward。
+2. 比較表：列出 final running reward、last 50 episodes mean reward、best reward。
+3. 短文字分析：比較是否收斂更快、reward 波動是否較小、最後平均 reward 是否更高。
+
+本 repo 沒有偽造長時間 Atari 訓練分數；完整 Atari 訓練通常需要 GPU 與大量 frames。若執行完整訓練，建議使用以下表格填入實測值：
+
+| Model | Final running reward | Mean reward, last 50 episodes | Best reward | Notes |
+|---|---:|---:|---:|---|
+| Original DQN | TBD | TBD | TBD | baseline |
+| Dueling DQN | TBD | TBD | TBD | proposed variant |
+
+若 Dueling DQN 的曲線更快上升、last 50 episodes mean reward 更高或波動更小，即可說明 dueling head 在 Breakout 中更有效地分離了 state value 與 action advantage，因此比直接估計 Q-values 的原始 head 更有機會取得較好表現。
 
 ---
 
