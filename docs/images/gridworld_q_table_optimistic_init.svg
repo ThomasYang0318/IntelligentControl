@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="744" height="864" viewBox="0 0 744 864">
+<rect width="100%" height="100%" fill="#f8f3ea"/>
+<rect x="18" y="18" width="708" height="828" rx="26" fill="#fffaf1" stroke="#d7c7aa"/>
+<text x="372.0" y="54.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="25" font-weight="700" fill="#172026">Learned Q-table: optimistic_init</text>
+<text x="372.0" y="80.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="14" font-weight="400" fill="#6c6a62">epsilon=0.05, alpha=0.1, gamma=1.0, initial Q=5.0</text>
+<rect x="42" y="110" width="124" height="124" rx="18" fill="#fcf3ed" stroke="#d7c7aa"/>
+<text x="60.0" y="136.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(0, 0)</text>
+<text x="104.0" y="158.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&gt;</text>
+<text x="104.0" y="182.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 4.79</text>
+<text x="104.0" y="206.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:4.7</text>
+<text x="104.0" y="224.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:4.7</text>
+<text x="71.0" y="216.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:4.7</text>
+<text x="137.0" y="216.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">R:4.8</text>
+<rect x="174" y="110" width="124" height="124" rx="18" fill="#6fa09a" stroke="#d7c7aa"/>
+<text x="192.0" y="136.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(0, 1)</text>
+<text x="236.0" y="158.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&gt;</text>
+<text x="236.0" y="182.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 10.95</text>
+<text x="236.0" y="206.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:4.9</text>
+<text x="236.0" y="224.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:4.9</text>
+<text x="203.0" y="216.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:4.9</text>
+<text x="269.0" y="216.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">R:11.0</text>
+<rect x="306" y="110" width="124" height="124" rx="18" fill="#226f68" stroke="#d7c7aa"/>
+<text x="324.0" y="136.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(0, 2)</text>
+<text x="368.0" y="158.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&gt;</text>
+<text x="368.0" y="182.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 14.00</text>
+<text x="368.0" y="206.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:8.6</text>
+<text x="368.0" y="224.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:10.4</text>
+<text x="335.0" y="216.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:7.3</text>
+<text x="401.0" y="216.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">R:14.0</text>
+<rect x="438" y="110" width="124" height="124" rx="18" fill="#e8b84a" stroke="#d7c7aa"/>
+<text x="456.0" y="136.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(0, 3)</text>
+<text x="500.0" y="177.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#172026">GOLD</text>
+<text x="500.0" y="206.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">U:5.0</text>
+<text x="500.0" y="224.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:5.0</text>
+<text x="467.0" y="216.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:5.0</text>
+<text x="533.0" y="216.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:5.0</text>
+<rect x="570" y="110" width="124" height="124" rx="18" fill="#699d96" stroke="#d7c7aa"/>
+<text x="588.0" y="136.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(0, 4)</text>
+<text x="632.0" y="158.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&lt;</text>
+<text x="632.0" y="182.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 11.18</text>
+<text x="632.0" y="206.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:4.9</text>
+<text x="632.0" y="224.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:4.9</text>
+<text x="599.0" y="216.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">L:11.2</text>
+<text x="665.0" y="216.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:4.9</text>
+<rect x="42" y="242" width="124" height="124" rx="18" fill="#fbeee7" stroke="#d7c7aa"/>
+<text x="60.0" y="268.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(1, 0)</text>
+<text x="104.0" y="290.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">v</text>
+<text x="104.0" y="314.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 4.54</text>
+<text x="104.0" y="338.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:4.5</text>
+<text x="104.0" y="356.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">D:4.5</text>
+<text x="71.0" y="348.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:4.5</text>
+<text x="137.0" y="348.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:4.5</text>
+<rect x="174" y="242" width="124" height="124" rx="18" fill="#84aea7" stroke="#d7c7aa"/>
+<text x="192.0" y="268.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(1, 1)</text>
+<text x="236.0" y="290.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&gt;</text>
+<text x="236.0" y="314.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 10.14</text>
+<text x="236.0" y="338.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:4.8</text>
+<text x="236.0" y="356.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:4.7</text>
+<text x="203.0" y="348.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:4.7</text>
+<text x="269.0" y="348.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">R:10.1</text>
+<rect x="306" y="242" width="124" height="124" rx="18" fill="#3b7f78" stroke="#d7c7aa"/>
+<text x="324.0" y="268.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(1, 2)</text>
+<text x="368.0" y="290.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">^</text>
+<text x="368.0" y="314.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 13.00</text>
+<text x="368.0" y="338.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">U:13.0</text>
+<text x="368.0" y="356.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:9.4</text>
+<text x="335.0" y="348.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:6.8</text>
+<text x="401.0" y="348.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:-3.5</text>
+<rect x="438" y="242" width="124" height="124" rx="18" fill="#cc4b37" stroke="#d7c7aa"/>
+<text x="456.0" y="268.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(1, 3)</text>
+<text x="500.0" y="309.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#fff7ed">BOMB</text>
+<text x="500.0" y="338.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#fff7ed">U:5.0</text>
+<text x="500.0" y="356.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#fff7ed">D:5.0</text>
+<text x="467.0" y="348.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#fff7ed">L:5.0</text>
+<text x="533.0" y="348.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#fff7ed">R:5.0</text>
+<rect x="570" y="242" width="124" height="124" rx="18" fill="#d3e1da" stroke="#d7c7aa"/>
+<text x="588.0" y="268.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(1, 4)</text>
+<text x="632.0" y="290.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">^</text>
+<text x="632.0" y="314.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 7.01</text>
+<text x="632.0" y="338.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">U:7.0</text>
+<text x="632.0" y="356.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:4.8</text>
+<text x="599.0" y="348.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:3.9</text>
+<text x="665.0" y="348.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:4.8</text>
+<rect x="42" y="374" width="124" height="124" rx="18" fill="#fcf1ea" stroke="#d7c7aa"/>
+<text x="60.0" y="400.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(2, 0)</text>
+<text x="104.0" y="422.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&gt;</text>
+<text x="104.0" y="446.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 4.68</text>
+<text x="104.0" y="470.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:4.2</text>
+<text x="104.0" y="488.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:4.0</text>
+<text x="71.0" y="480.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:4.1</text>
+<text x="137.0" y="480.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">R:4.7</text>
+<rect x="174" y="374" width="124" height="124" rx="18" fill="#87b0a9" stroke="#d7c7aa"/>
+<text x="192.0" y="400.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(2, 1)</text>
+<text x="236.0" y="422.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&gt;</text>
+<text x="236.0" y="446.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 10.02</text>
+<text x="236.0" y="470.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:4.4</text>
+<text x="236.0" y="488.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:4.3</text>
+<text x="203.0" y="480.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:4.3</text>
+<text x="269.0" y="480.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">R:10.0</text>
+<rect x="306" y="374" width="124" height="124" rx="18" fill="#558f89" stroke="#d7c7aa"/>
+<text x="324.0" y="400.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(2, 2)</text>
+<text x="368.0" y="422.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">^</text>
+<text x="368.0" y="446.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 12.00</text>
+<text x="368.0" y="470.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">U:12.0</text>
+<text x="368.0" y="488.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:8.9</text>
+<text x="335.0" y="480.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:7.2</text>
+<text x="401.0" y="480.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:5.4</text>
+<rect x="438" y="374" width="124" height="124" rx="18" fill="#a1c1ba" stroke="#d7c7aa"/>
+<text x="456.0" y="400.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(2, 3)</text>
+<text x="500.0" y="422.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&lt;</text>
+<text x="500.0" y="446.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 8.96</text>
+<text x="500.0" y="470.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:3.9</text>
+<text x="500.0" y="488.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:4.3</text>
+<text x="467.0" y="480.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">L:9.0</text>
+<text x="533.0" y="480.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:4.3</text>
+<rect x="570" y="374" width="124" height="124" rx="18" fill="#fcf2eb" stroke="#d7c7aa"/>
+<text x="588.0" y="400.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(2, 4)</text>
+<text x="632.0" y="422.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">^</text>
+<text x="632.0" y="446.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 4.69</text>
+<text x="632.0" y="470.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">U:4.7</text>
+<text x="632.0" y="488.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:4.3</text>
+<text x="599.0" y="480.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:4.3</text>
+<text x="665.0" y="480.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:4.3</text>
+<rect x="42" y="506" width="124" height="124" rx="18" fill="#f9e9e1" stroke="#d7c7aa"/>
+<text x="60.0" y="532.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(3, 0)</text>
+<text x="104.0" y="554.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&gt;</text>
+<text x="104.0" y="578.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 4.25</text>
+<text x="104.0" y="602.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:3.6</text>
+<text x="104.0" y="620.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:3.5</text>
+<text x="71.0" y="612.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:3.6</text>
+<text x="137.0" y="612.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">R:4.3</text>
+<rect x="174" y="506" width="124" height="124" rx="18" fill="#a4c2bc" stroke="#d7c7aa"/>
+<text x="192.0" y="532.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(3, 1)</text>
+<text x="236.0" y="554.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&gt;</text>
+<text x="236.0" y="578.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 8.87</text>
+<text x="236.0" y="602.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:3.9</text>
+<text x="236.0" y="620.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:3.7</text>
+<text x="203.0" y="612.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:3.7</text>
+<text x="269.0" y="612.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">R:8.9</text>
+<rect x="306" y="506" width="124" height="124" rx="18" fill="#6ea099" stroke="#d7c7aa"/>
+<text x="324.0" y="532.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(3, 2)</text>
+<text x="368.0" y="554.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">^</text>
+<text x="368.0" y="578.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 11.00</text>
+<text x="368.0" y="602.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">U:11.0</text>
+<text x="368.0" y="620.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:6.7</text>
+<text x="335.0" y="612.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:5.4</text>
+<text x="401.0" y="612.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:6.6</text>
+<rect x="438" y="506" width="124" height="124" rx="18" fill="#87b0a9" stroke="#d7c7aa"/>
+<text x="456.0" y="532.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(3, 3)</text>
+<text x="500.0" y="554.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&lt;</text>
+<text x="500.0" y="578.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 10.00</text>
+<text x="500.0" y="602.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:4.7</text>
+<text x="500.0" y="620.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:5.0</text>
+<text x="467.0" y="612.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">L:10.0</text>
+<text x="533.0" y="612.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:5.3</text>
+<rect x="570" y="506" width="124" height="124" rx="18" fill="#a0c0ba" stroke="#d7c7aa"/>
+<text x="588.0" y="532.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(3, 4)</text>
+<text x="632.0" y="554.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&lt;</text>
+<text x="632.0" y="578.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 9.00</text>
+<text x="632.0" y="602.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:3.7</text>
+<text x="632.0" y="620.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:4.3</text>
+<text x="599.0" y="612.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">L:9.0</text>
+<text x="665.0" y="612.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:4.5</text>
+<rect x="42" y="638" width="124" height="124" rx="18" fill="#bad0ca" stroke="#d7c7aa"/>
+<text x="60.0" y="664.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(4, 0)</text>
+<text x="104.0" y="686.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&gt;</text>
+<text x="104.0" y="710.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 8.00</text>
+<text x="104.0" y="734.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:3.0</text>
+<text x="104.0" y="752.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:3.8</text>
+<text x="71.0" y="744.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:3.4</text>
+<text x="137.0" y="744.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">R:8.0</text>
+<rect x="174" y="638" width="124" height="124" rx="18" fill="#a0c0ba" stroke="#d7c7aa"/>
+<text x="192.0" y="664.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(4, 1)</text>
+<text x="236.0" y="686.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">&gt;</text>
+<text x="236.0" y="710.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 9.00</text>
+<text x="236.0" y="734.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">U:4.5</text>
+<text x="236.0" y="752.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:5.8</text>
+<text x="203.0" y="744.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:4.0</text>
+<text x="269.0" y="744.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">R:9.0</text>
+<rect x="306" y="638" width="124" height="124" rx="18" fill="#87b0a9" stroke="#d7c7aa"/>
+<text x="324.0" y="664.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(4, 2)</text>
+<text x="368.0" y="686.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">^</text>
+<text x="368.0" y="710.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 10.00</text>
+<text x="368.0" y="734.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">U:10.0</text>
+<text x="368.0" y="752.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:6.4</text>
+<text x="335.0" y="744.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:6.1</text>
+<text x="401.0" y="744.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:5.4</text>
+<rect x="438" y="638" width="124" height="124" rx="18" fill="#a0c0ba" stroke="#d7c7aa"/>
+<text x="456.0" y="664.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(4, 3)</text>
+<text x="500.0" y="686.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">^</text>
+<text x="500.0" y="710.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 9.00</text>
+<text x="500.0" y="734.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">U:9.0</text>
+<text x="500.0" y="752.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:4.4</text>
+<text x="467.0" y="744.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:5.0</text>
+<text x="533.0" y="744.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:4.0</text>
+<rect x="570" y="638" width="124" height="124" rx="18" fill="#bad0ca" stroke="#d7c7aa"/>
+<text x="588.0" y="664.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">(4, 4)</text>
+<text x="632.0" y="686.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="32" font-weight="700" fill="#226f68">^</text>
+<text x="632.0" y="710.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#172026">best 8.00</text>
+<text x="632.0" y="734.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="700" fill="#172026">U:8.0</text>
+<text x="632.0" y="752.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">D:4.8</text>
+<text x="599.0" y="744.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">L:3.1</text>
+<text x="665.0" y="744.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="11" font-weight="400" fill="#172026">R:4.4</text>
+<text x="42.0" y="805.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="14" font-weight="400" fill="#6c6a62">Each state shows best action and Q-values for U/D/L/R. Green = higher learned value, red = lower value.</text>
+<text x="42.0" y="831.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="14" font-weight="400" fill="#6c6a62">Last 100 episodes: mean reward 3.20, mean steps 6.60</text>
+</svg>

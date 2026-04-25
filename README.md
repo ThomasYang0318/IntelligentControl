@@ -8,6 +8,7 @@ This repository is a learning record for the three take-home questions.
 - `scripts/q_learning_gridworld.py`: clean-room Gridworld Q-learning implementation and experiment runner.
 - `docs/gridworld_results.csv`: reproducible Gridworld experiment summary.
 - `docs/gridworld_q_tables.csv`: learned Q-tables for the three settings discussed in Question 1.2.
+- `docs/images/gridworld_q_table_*.svg`: visual learned Q-table figures embedded in the report.
 - `scripts/dqn_dueling_variant.py`: Dueling DQN model variant for the Keras Atari Breakout example.
 - `requirements.txt`: optional dependencies for running the Atari model variant.
 
