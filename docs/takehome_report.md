@@ -69,7 +69,7 @@ $$
 | optimistic_init | 0.05 | 0.10 | 1.00 | 5.0 | 3.20 | 6.60 | 樂觀初始值鼓勵早期嘗試未探索動作，最後表現與 baseline 接近或稍好 |
 | faster_learning | 0.05 | 0.30 | 1.00 | 0.0 | 2.88 | 6.52 | 較大的 learning rate 讓學習較快，但單次樣本影響更大，reward 稍低 |
 
-以下用圖片呈現三組設定訓練完成後的 learned Q-table。每個格子是一個 state，中央箭頭是該 state 的 greedy action，周圍 `U/D/L/R` 是四個 action 的 Q-value。綠色代表較高 learned value，紅色代表較低 learned value；`GOLD` 與 `BOMB` 是 terminal states。完整數值另存於 `docs/gridworld_q_tables.csv`。
+以下圖片由 `scripts/render_gridworld_q_tables.py` 根據實際 Q-learning 訓練結果產生，不是手工繪製。三組設定訓練完成後的 learned Q-table 如下。每個格子是一個 state，中央箭頭是該 state 的 greedy action，周圍 `U/D/L/R` 是四個 action 的 Q-value。綠色代表較高 learned value，紅色代表較低 learned value；`GOLD` 與 `BOMB` 是 terminal states。完整數值另存於 `docs/gridworld_q_tables.csv`。
 
 #### Learned Q-table: `baseline`
 
@@ -160,6 +160,8 @@ $$
 減去 advantage 的平均值，是為了讓 $V(s)$ 和 $A(s,a)$ 的分解更穩定，避免兩者任意平移後仍得到同一組 Q-value。Dueling Network 的核心想法就是把「狀態本身的價值」和「各動作的相對優勢」分開估計。這符合 Wang et al. 在 dueling network 論文中提出的基本設計。
 
 ![Dueling DQN head architecture](images/dqn_dueling_head.svg)
+
+上圖由 `scripts/render_dqn_dueling_head.py` 根據共用規格 `scripts/dqn_architecture_spec.py` 生成；模型實作與圖片都引用同一份規格，避免圖和程式碼不一致。
 
 原始 Keras Q-network 可簡化表示為：
 

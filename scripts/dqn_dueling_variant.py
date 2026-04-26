@@ -18,8 +18,10 @@ os.environ.setdefault("KERAS_BACKEND", "tensorflow")
 import keras
 from keras import layers, ops
 
+from dqn_architecture_spec import NUM_ACTIONS
 
-def create_dueling_q_model(num_actions: int = 4) -> keras.Model:
+
+def create_dueling_q_model(num_actions: int = NUM_ACTIONS) -> keras.Model:
     inputs = layers.Input(shape=(4, 84, 84), name="stacked_frames")
 
     x = layers.Lambda(
