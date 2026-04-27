@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+<rect width="100%" height="100%" fill="#fffaf1"/>
+<text x="450" y="36" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="24" font-weight="700" fill="#172026">Breakout Smoke Run: Running Reward</text>
+<line x1="58" y1="362" x2="842" y2="362" stroke="#6c6a62"/>
+<line x1="58" y1="58" x2="58" y2="362" stroke="#6c6a62"/>
+<text x="450.0" y="402" text-anchor="middle" font-family="Georgia" font-size="14" fill="#6c6a62">environment steps</text>
+<text x="20" y="210.0" text-anchor="middle" transform="rotate(-90 20 210.0)" font-family="Georgia" font-size="14" fill="#6c6a62">running reward</text>
+<polyline points="167.2,118.8 300.5,58.0 385.7,118.8 453.1,179.6 590.1,143.1 673.7,179.6 778.8,170.9 842.0,179.6" fill="none" stroke="#226f68" stroke-width="3"/>
+<rect x="672" y="60" width="14" height="14" fill="#226f68"/>
+<text x="694" y="72" font-family="Georgia" font-size="14" fill="#172026">Dueling DQN</text>
+<polyline points="167.2,118.8 300.5,58.0 378.4,159.3 453.1,210.0 578.1,191.8 678.9,199.9 764.1,205.7" fill="none" stroke="#b94f45" stroke-width="3"/>
+<rect x="672" y="84" width="14" height="14" fill="#b94f45"/>
+<text x="694" y="96" font-family="Georgia" font-size="14" fill="#172026">Original DQN</text>
+</svg>

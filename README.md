@@ -11,6 +11,9 @@ This repository is a learning record for the three take-home questions.
 - `docs/images/gridworld_q_table_*.svg`: visual learned Q-table figures embedded in the report.
 - `docs/images/dqn_dueling_head.svg`: generated Dueling DQN architecture diagram for Question 2.4.
 - `scripts/dqn_dueling_variant.py`: Dueling DQN model variant for the Keras Atari Breakout example.
+- `scripts/run_breakout_dueling_smoke.py`: short reproducible Breakout comparison for Original DQN vs Dueling DQN.
+- `docs/breakout_dueling_smoke_*.csv`: smoke-run comparison outputs.
+- `docs/images/breakout_dueling_smoke_curve.svg`: generated reward curve from the smoke run.
 - `requirements.txt`: optional dependencies for running the Atari model variant.
 
 ## Reproduce Gridworld Results
@@ -32,6 +35,19 @@ python3 scripts/render_dqn_dueling_head.py
 
 - Q-table figures are generated from actual Q-learning training output with fixed seed `20260425`.
 - The Dueling DQN diagram is generated from `scripts/dqn_architecture_spec.py`, the shared architecture specification used by the model code and figure renderer.
+
+
+## Reproduce Breakout Smoke Run
+
+Use Python 3.11 for TensorFlow compatibility. The local run used `.venv-atari`.
+
+```bash
+python3.11 -m venv .venv-atari
+.venv-atari/bin/python -m pip install -r requirements.txt
+.venv-atari/bin/python scripts/run_breakout_dueling_smoke.py --steps 1500
+```
+
+This is a short smoke run, not a full Atari benchmark. It keeps preprocessing, replay buffer, epsilon-greedy behavior, optimizer, and target-network mechanics fixed while changing only the Q-network head.
 
 ## Legal Use Notes
 

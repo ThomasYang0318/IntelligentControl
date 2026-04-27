@@ -5,3 +5,5 @@ tensorflow>=2.16
 gymnasium[atari,accept-rom-license]>=0.29
 ale-py>=0.8
 numpy>=1.26
+
+opencv-python>=4.13

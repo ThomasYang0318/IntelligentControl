@@ -274,14 +274,30 @@ model_target = create_dueling_q_model()
 2. 比較表：列出 final running reward、last 50 episodes mean reward、best reward。
 3. 短文字分析：比較是否收斂更快、reward 波動是否較小、最後平均 reward 是否更高。
 
-本 repo 沒有偽造長時間 Atari 訓練分數；完整 Atari 訓練通常需要 GPU 與大量 frames。若執行完整訓練，建議使用以下表格填入實測值：
+為了避免偽造長時間 Atari 分數，本 repo 另外提供一個可重現的短版 smoke run：`scripts/run_breakout_dueling_smoke.py`。它使用同一個 `BreakoutNoFrameskip-v4` 環境、Atari preprocessing、4-frame stack、同一 seed、同一 replay buffer、同一 epsilon-greedy schedule、同一 optimizer 與 target network 機制，只比較 Original DQN head 和 Dueling DQN head。由於只跑 `1500 steps/model`，這不是完整 10M frames benchmark，但可以作為實際可執行的架構比較結果。
 
-| Model | Final running reward | Mean reward, last 50 episodes | Best reward | Notes |
-|---|---:|---:|---:|---|
-| Original DQN | TBD | TBD | TBD | baseline |
-| Dueling DQN | TBD | TBD | TBD | proposed variant |
+重現指令：
 
-若 Dueling DQN 的曲線更快上升、last 50 episodes mean reward 更高或波動更小，即可說明 dueling head 在 Breakout 中更有效地分離了 state value 與 action advantage，因此比直接估計 Q-values 的原始 head 更有機會取得較好表現。
+```bash
+.venv-atari/bin/python scripts/run_breakout_dueling_smoke.py --steps 1500
+```
+
+輸出檔：
+
+- `docs/breakout_dueling_smoke_summary.csv`
+- `docs/breakout_dueling_smoke_episodes.csv`
+- `docs/images/breakout_dueling_smoke_curve.svg`
+
+![Breakout smoke reward curve](images/breakout_dueling_smoke_curve.svg)
+
+短版 smoke run 結果如下：
+
+| Model | Steps | Episodes | Final running reward | Mean reward, last 5 episodes | Best reward | Mean loss | Parameters | Notes |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| Original DQN | 1500 | 7 | 1.29 | 0.80 | 3.00 | 1.404 | 1,686,180 | baseline |
+| Dueling DQN | 1500 | 8 | 1.50 | 1.20 | 3.00 | 0.614 | 1,948,069 | proposed variant |
+
+在這個短版實驗中，Dueling DQN 的 final running reward 與 last-5 mean reward 都高於原始 DQN，mean loss 也較低。這支持本題的設計直覺：dueling head 能把 state value 和 action advantage 分開估計，使模型在很多動作價值接近的 Breakout 狀態中更有效率地學習。不過，嚴格的最終結論仍應以更長訓練 budget，例如 1M/5M/10M frames、至少 3 個 seeds 的平均結果為準。
 
 ---
 
