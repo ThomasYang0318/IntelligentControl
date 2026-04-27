@@ -213,13 +213,12 @@ def render_curve(path: Path, episode_rows: list[dict[str, object]], summaries: l
         rows = [row for row in episode_rows if row["model"] == model]
         steps = [int(row["step"]) for row in rows]
         running = [float(row["running_reward_last_10"]) for row in rows]
-        rewards = [float(row["episode_reward"]) for row in rows]
         color = colors[model]
 
         ax.plot(steps, running, marker="o", linewidth=2.8, markersize=6, color=color, label=model)
-        for step, run_value, reward in zip(steps, running, rewards):
+        for step, run_value in zip(steps, running):
             ax.annotate(
-                f"{reward:.0f}",
+                f"{run_value:.2f}",
                 (step, run_value),
                 textcoords="offset points",
                 xytext=(0, 8),
