@@ -1,14 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="560" viewBox="0 0 1040 560">
 <rect width="100%" height="100%" fill="#fffaf1"/>
-<text x="450" y="36" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="24" font-weight="700" fill="#172026">Breakout Smoke Run: Running Reward</text>
-<line x1="58" y1="362" x2="842" y2="362" stroke="#6c6a62"/>
-<line x1="58" y1="58" x2="58" y2="362" stroke="#6c6a62"/>
-<text x="450.0" y="402" text-anchor="middle" font-family="Georgia" font-size="14" fill="#6c6a62">environment steps</text>
-<text x="20" y="210.0" text-anchor="middle" transform="rotate(-90 20 210.0)" font-family="Georgia" font-size="14" fill="#6c6a62">running reward</text>
-<polyline points="167.2,118.8 300.5,58.0 385.7,118.8 453.1,179.6 590.1,143.1 673.7,179.6 778.8,170.9 842.0,179.6" fill="none" stroke="#226f68" stroke-width="3"/>
-<rect x="672" y="60" width="14" height="14" fill="#226f68"/>
-<text x="694" y="72" font-family="Georgia" font-size="14" fill="#172026">Dueling DQN</text>
-<polyline points="167.2,118.8 300.5,58.0 378.4,159.3 453.1,210.0 578.1,191.8 678.9,199.9 764.1,205.7" fill="none" stroke="#b94f45" stroke-width="3"/>
-<rect x="672" y="84" width="14" height="14" fill="#b94f45"/>
-<text x="694" y="96" font-family="Georgia" font-size="14" fill="#172026">Original DQN</text>
+<rect x="20" y="20" width="1000" height="520" rx="26" fill="#f8f3ea" stroke="#d7c7aa"/>
+<text x="520.0" y="48.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="25" font-weight="700" fill="#172026">Breakout Smoke Run: Original DQN vs Dueling DQN</text>
+<text x="520.0" y="72.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="14" font-weight="400" fill="#6c6a62">Actual run, 1500 environment steps per model, same preprocessing/seed/replay/target mechanics</text>
+<rect x="72" y="74" width="638" height="408" fill="#fffdf7" stroke="#d7c7aa"/>
+<line x1="72" y1="482.0" x2="710" y2="482.0" stroke="#eadcc4"/>
+<text x="60.0" y="486.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">-0.3</text>
+<line x1="72" y1="380.0" x2="710" y2="380.0" stroke="#eadcc4"/>
+<text x="60.0" y="384.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">0.5</text>
+<line x1="72" y1="278.0" x2="710" y2="278.0" stroke="#eadcc4"/>
+<text x="60.0" y="282.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">1.2</text>
+<line x1="72" y1="176.0" x2="710" y2="176.0" stroke="#eadcc4"/>
+<text x="60.0" y="180.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">2.0</text>
+<line x1="72" y1="74.0" x2="710" y2="74.0" stroke="#eadcc4"/>
+<text x="60.0" y="78.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">2.8</text>
+<line x1="72.0" y1="482" x2="72.0" y2="488" stroke="#6c6a62"/>
+<text x="72.0" y="506.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">0</text>
+<line x1="284.7" y1="482" x2="284.7" y2="488" stroke="#6c6a62"/>
+<text x="284.7" y="506.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">500</text>
+<line x1="497.3" y1="482" x2="497.3" y2="488" stroke="#6c6a62"/>
+<text x="497.3" y="506.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">1000</text>
+<line x1="710.0" y1="482" x2="710.0" y2="488" stroke="#6c6a62"/>
+<text x="710.0" y="506.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">1500</text>
+<text x="391.0" y="536.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="14" font-weight="400" fill="#6c6a62">environment steps</text>
+<text x="24.0" y="278.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="14" font-weight="400" fill="#6c6a62">running reward</text>
+<polyline points="160.9,179.3 269.4,113.5 332.7,223.2 393.6,278.0 495.2,258.3 577.3,267.0 646.6,273.3" fill="none" stroke="#b94f45" stroke-width="3.5"/>
+<circle cx="160.9" cy="179.3" r="4.5" fill="#b94f45" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="160.9" y="170.3" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#b94f45">2</text>
+<circle cx="269.4" cy="113.5" r="4.5" fill="#b94f45" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="269.4" y="104.5" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#b94f45">3</text>
+<circle cx="332.7" cy="223.2" r="4.5" fill="#b94f45" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="332.7" y="214.2" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#b94f45">0</text>
+<circle cx="393.6" cy="278.0" r="4.5" fill="#b94f45" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="393.6" y="269.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#b94f45">0</text>
+<circle cx="495.2" cy="258.3" r="4.5" fill="#b94f45" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="495.2" y="249.3" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#b94f45">2</text>
+<circle cx="577.3" cy="267.0" r="4.5" fill="#b94f45" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="577.3" y="258.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#b94f45">1</text>
+<circle cx="646.6" cy="273.3" r="4.5" fill="#b94f45" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="646.6" y="264.3" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#b94f45">1</text>
+<text x="636.6" y="257.3" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#b94f45">final 1.29</text>
+<polyline points="160.9,179.3 269.4,113.5 338.7,179.3 393.6,245.1 505.0,205.6 573.0,245.1 658.5,235.7 710.0,245.1" fill="none" stroke="#226f68" stroke-width="3.5"/>
+<circle cx="160.9" cy="179.3" r="4.5" fill="#226f68" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="160.9" y="170.3" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#226f68">2</text>
+<circle cx="269.4" cy="113.5" r="4.5" fill="#226f68" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="269.4" y="104.5" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#226f68">3</text>
+<circle cx="338.7" cy="179.3" r="4.5" fill="#226f68" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="338.7" y="170.3" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#226f68">1</text>
+<circle cx="393.6" cy="245.1" r="4.5" fill="#226f68" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="393.6" y="236.1" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#226f68">0</text>
+<circle cx="505.0" cy="205.6" r="4.5" fill="#226f68" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="505.0" y="196.6" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#226f68">3</text>
+<circle cx="573.0" cy="245.1" r="4.5" fill="#226f68" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="573.0" y="236.1" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#226f68">0</text>
+<circle cx="658.5" cy="235.7" r="4.5" fill="#226f68" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="658.5" y="226.7" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#226f68">2</text>
+<circle cx="710.0" cy="245.1" r="4.5" fill="#226f68" stroke="#fffaf1" stroke-width="1.5"/>
+<text x="710.0" y="236.1" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="10" font-weight="700" fill="#226f68">1</text>
+<text x="720.0" y="229.1" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="13" font-weight="700" fill="#226f68">final 1.50</text>
+<rect x="744" y="74" width="270" height="408" rx="18" fill="#fffdf7" stroke="#d7c7aa"/>
+<text x="879.0" y="108.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="18" font-weight="700" fill="#172026">Numeric Results</text>
+<rect x="764" y="130" width="14" height="14" fill="#b94f45"/>
+<text x="786.0" y="144.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="14" font-weight="700" fill="#172026">Original DQN</text>
+<text x="778.0" y="168.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">final running</text>
+<text x="980.0" y="168.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="700" fill="#172026">1.286</text>
+<text x="778.0" y="186.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">mean last 5</text>
+<text x="980.0" y="186.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="700" fill="#172026">0.800</text>
+<text x="778.0" y="204.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">best reward</text>
+<text x="980.0" y="204.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="700" fill="#172026">3.000</text>
+<text x="778.0" y="222.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">mean loss</text>
+<text x="980.0" y="222.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="700" fill="#172026">1.404</text>
+<text x="778.0" y="240.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">params</text>
+<text x="980.0" y="240.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="700" fill="#172026">1,686,180</text>
+<rect x="764" y="262" width="14" height="14" fill="#226f68"/>
+<text x="786.0" y="276.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="14" font-weight="700" fill="#172026">Dueling DQN</text>
+<text x="778.0" y="300.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">final running</text>
+<text x="980.0" y="300.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="700" fill="#172026">1.500</text>
+<text x="778.0" y="318.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">mean last 5</text>
+<text x="980.0" y="318.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="700" fill="#172026">1.200</text>
+<text x="778.0" y="336.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">best reward</text>
+<text x="980.0" y="336.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="700" fill="#172026">3.000</text>
+<text x="778.0" y="354.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">mean loss</text>
+<text x="980.0" y="354.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="700" fill="#172026">0.614</text>
+<text x="778.0" y="372.0" text-anchor="start" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="400" fill="#6c6a62">params</text>
+<text x="980.0" y="372.0" text-anchor="end" font-family="Georgia, Times New Roman, serif" font-size="12" font-weight="700" fill="#172026">1,948,069</text>
+<text x="879.0" y="446.0" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="15" font-weight="700" fill="#226f68">Dueling final Δ = +0.21</text>
 </svg>

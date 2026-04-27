@@ -290,6 +290,8 @@ model_target = create_dueling_q_model()
 
 ![Breakout smoke reward curve](images/breakout_dueling_smoke_curve.svg)
 
+圖中每個點旁的數字是該 episode reward，線上的 `final` 標籤是最後 running reward；右側 summary panel 列出 final running reward、last-5 mean、best reward、mean loss 與參數量。
+
 短版 smoke run 結果如下：
 
 | Model | Steps | Episodes | Final running reward | Mean reward, last 5 episodes | Best reward | Mean loss | Parameters | Notes |
