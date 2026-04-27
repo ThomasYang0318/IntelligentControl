@@ -7,3 +7,4 @@ ale-py>=0.8
 numpy>=1.26
 
 opencv-python>=4.13
+matplotlib>=3.10
